@@ -1,0 +1,58 @@
+/* login */
+.bg-login{background-image:url("../img/login_bg.webp"); background-size: cover; background-position: center center;}
+.login-form-container{background-color:rgba(255, 255, 255, 1); border-radius: .375rem;border: 1px solid #cbd0dd; }
+.w-max-380px{max-width: 380px;}
+
+
+
+
+/* tables media events */
+@media screen and (max-width: 550px){
+    .page-link{padding: 5px 4px;}
+}
+
+@media only screen and (max-width: 768px) {
+    /* Force table to not be like tables anymore */
+    .no-more-tables table,.no-more-tables thead,.no-more-tables tbody,.no-more-tables th,.no-more-tables td, .no-more-tables tr {display: block;}
+    /* Hide table headers (but not display: none;, for accessibility) */
+    .no-more-tables thead tr { display:none;}
+    .no-more-tables tr { border: 1px solid #ccc; margin-bottom: 15px;}
+    .no-more-tables td { border: none;border-bottom: 3px solid #eee; position: relative;white-space: normal;padding: 5% 10px !important;}
+    .no-more-tables td:before {white-space: nowrap;font-weight:bold;display:block;}
+    .no-more-tables td:before { content: attr(data-title); }
+}
+
+/* backgrounds */
+.bg-soft-yellow{background-color: #F1F2F3;}
+.bg-grey-1{background-color: #E4E5E6;}
+.bg-orange{background-color: #FF650B;}
+.bg-effect-orange:hover{background-color: #FF650B;}
+.bg-active-orange.active{background-color: #FF650B !important; color: #ffffff;}
+
+/* borders */
+.border-10{border:10px solid !important;}
+.border-grey{border-color: #C2C2C2 !important;}
+.border-soft-yellow{border-color: #F1F2F3 !important;}
+.border-botttom-grey{--phoenix-border-opacity: 1;border-bottom: 2px solid !important; border-color: #D9D9D9 !important;}
+.border-effect-orange{background: linear-gradient(#FF650B, #FF650B) bottom left / 0% 2px no-repeat; transition: 0.6s;}
+.border-effect-orange:focus{background-size: 100% 2px; border-color: transparent !important;}
+@media only screen and (min-width: 768px) {
+    .border-right-white{border-right:1px solid #ffffff !important;}
+}
+
+/* heights */
+.height-300px{height: 300px !important;}
+.max-height-400px{max-height: 400px !important;}
+
+/* texts */
+.text-dark-blue{color: #313A4B !important;}
+.text-grey{color: #6C6C6C !important;}
+.text-soft-grey{color: #B7B6B6 !important;}
+.text-orange{color: #FF650B !important;}
+.color-effect-orange:hover{color: #FF650B !important;}
+
+/* font weight */
+.fw-100{font-weight: 100;}
+.fw-400{font-weight: 400;}
+.fw-500{font-weight: 500;}
+.fw-600{font-weight: 600;}

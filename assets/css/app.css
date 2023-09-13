@@ -1,0 +1,322 @@
+.mt-6 {
+    margin-top: 3rem;
+}
+
+.mt-7 {
+    margin-top: 4rem;
+}
+
+.mt-20px {
+    margin-top: 20px;
+}
+
+.mt-40px {
+    margin-top: 40px;
+}
+
+.px-6 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.object-fit-contain {
+    object-fit: contain;
+}
+
+.border-primary-custom {
+    border: 1px solid #C1C1C1;
+}
+
+.width-number-input {
+    width: 130px;
+}
+
+.text-green {
+    color: green !important;
+}
+
+.text-blue {
+    color: #36A2EB;
+}
+
+.visibility-collapse {
+    visibility: collapse !important;
+}
+
+.fs-small {
+    font-size: 14px;
+}
+
+.h-500px {
+    height: 500px;
+}
+
+.w-200px {
+    width: 200px;
+}
+
+.max-w-1350px {
+    max-width: 1350px;
+}
+
+.page-title {
+    margin-bottom: 50px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #C2C2C2;
+    font-weight: 100;
+    font-size: 1.953125rem;
+    color: #313A4B;
+}
+
+.toast-container {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.chart-container {
+    min-width: 1500px;
+    overflow-x: auto;
+}
+
+.chart-container .chart-amounts > div:not(:nth-of-type(1)) {
+    border-right: 1px solid #C2C2C2;
+}
+
+.chart-container .chart-amounts > div .label {
+    font-size: 12px;
+}
+
+.price-manager .btn-preview {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.add-coupon-form .categories-list {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.add-coupon-form .categories-list::-webkit-scrollbar {
+    width: 5px;
+}
+
+.add-coupon-form .categories-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.add-coupon-form .categories-list::-webkit-scrollbar-thumb {
+    background: #CCCCCC;
+}
+
+.add-coupon-form .categories-list::-webkit-scrollbar-thumb:hover {
+    background: #CCCCCC;
+}
+
+.add-edit-message {
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    z-index: 9999;
+}
+
+.chart-container .chart-header {
+    position: relative;
+}
+
+.chart-container .middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.order-texts-info {
+    font-weight: 500;
+    color: #3874ff;
+    cursor: pointer;
+}
+
+#preview-modal tbody .name {
+    width: 500px;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.no-data-message {
+    color: #AAAAAA;
+}
+
+.switch {
+    margin-top: 20px;
+    padding: 2rem;
+    text-align: center;
+}
+
+.switch .btn-toggle {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.switch .btn-toggle {
+    margin: 0 4rem;
+    padding: 0;
+    position: relative;
+    border: none;
+    height: 1.5rem;
+    width: 5rem;
+    border-radius: 1.5rem;
+    color: #6b7381;
+    background: #36A2EB;
+}
+
+.switch .btn-toggle:focus,
+.switch .btn-toggle.focus,
+.switch .btn-toggle:focus.active,
+.switch .btn-toggle.focus.active {
+    outline: none;
+}
+
+.switch .btn-toggle:before,
+.switch .btn-toggle:after {
+    line-height: 1.5rem;
+    width: 4rem;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: absolute;
+    bottom: 0;
+    transition: opacity 0.25s;
+}
+
+.switch .btn-toggle:before {
+    color: #36A2EB;
+}
+
+.switch .btn-toggle:after {
+    color: green;
+}
+
+.switch .btn-toggle > .inner-handle {
+    border-radius: 13px;
+    width: 65px;
+    height: 13px;
+    position: absolute;
+    top: 6px;
+    left: 8px;
+    background-color: #8ACAF4;
+    box-shadow: inset 1px 1px 2px -1px black;
+}
+
+.switch .btn-toggle.active > .inner-handle {
+    background-color: green;
+}
+
+.switch .btn-toggle > .handle:before {
+    content: "";
+    position: absolute;
+    height: 34px;
+    width: 34px;
+    top: 35%;
+    left: 11px;
+    background-image: radial-gradient(circle at center, #36A2EB 5px, transparent 5px);
+    background-size: 10px 10px;
+    background-repeat: no-repeat;
+}
+
+.switch .btn-toggle.active > .handle:before {
+    background-image: radial-gradient(circle at center, green 5px, transparent 5px);
+}
+
+.switch .btn-toggle > .handle {
+    position: absolute;
+    top: -0.2875rem;
+    left: 0.3875rem;
+    width: 2.125rem;
+    height: 2.125rem;
+    border-radius: 1.125rem;
+    background: #fff;
+    transition: left 0.25s;
+    border: 1px solid #ccc;
+}
+
+.switch .btn-toggle.active {
+    transition: background-color 0.25s;
+}
+
+.switch .btn-toggle.active > .handle {
+    left: 2.4175rem;
+    transition: left 0.25s;
+}
+
+.switch .btn-toggle.active:before {
+    opacity: 0.5;
+}
+
+.switch .btn-toggle.active:after {
+    opacity: 1;
+    color: green;
+}
+
+.switch .btn-toggle.active {
+    background-color: #039637;
+}
+
+.order-statistics .percentages-table > .row {
+    margin: auto;
+}
+
+.order-statistics .percentages-table .fs-1-custom {
+    font-size: 0.85rem;
+}
+
+.order-statistics .percentages-table .fs-2-custom {
+    font-size: 1.25rem;
+}
+
+.order-statistics .percentages-table .progress, .clicks-percentage-bar, .sales-percentage-bar {
+    height: 13px;
+    border-radius: unset;
+    background-color: #F1F2F4;
+}
+
+.order-statistics .percentages-table .progress .progress-bar, .clicks-percentage-bar .progress-bar, .sales-percentage-bar .progress-bar {
+    background-color: #36A2EB;
+}
+
+.order-statistics input[type="checkbox"], .order-statistics input[type="radio"], .best-seller-categories-tree-view input[type="checkbox"], .top-customers input[type="radio"] {
+    width: 17px;
+    height: 17px;
+}
+
+.order-statistics .order-counts-chart-container {
+    min-width: 800px;
+}
+
+.order-statistics .orders-totals-chart-container {
+    min-width: 800px;
+}
+
+@media screen and (min-width: 1200px) {
+    .w-xl-100px {
+        width: 100px !important;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .page-title {
+        text-align: center;
+    }
+
+    .price-manager .btn-preview {
+        position: relative;
+        left: 0;
+        transform: none;
+    }
+}
