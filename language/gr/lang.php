@@ -12,6 +12,7 @@ $lang["forms_requiredFields"] = array(
 	"username" 	=> "Όνομα",
 	"password" 	=> "Κωδικός",
 	"house" 	=> "Ονομασία σπιτιού",
+	"room" 		=> "Ονομασία δωματίου",
 );
 
 $lang["general"] = array(
@@ -65,10 +66,18 @@ $lang["dashboard"] = array(
 $lang["houses"] = array(
 	"title"	 			=> "ΣΠΙΤΙΑ",
 	"all_houses"	 	=> "Συνολικά όλα",
-	"no_rooms" 			=> "Χωρίς δωμάτια",
+	"no_rooms" 			=> "Χωρίς σπίτια",
 	"pending_chores" 	=> "Εκρεμούν εργασίες",
 	"name" 				=> "Ονομασία",
 	"activity" 			=> "Κατάσταση",
+);
+
+$lang["rooms"] = array(
+	"title"	 			=> "ΔΩΜΑΤΙΑ",
+	"all_rooms"	 		=> "Συνολικά δωμάτια",
+	"pending_chores" 	=> "Εκρεμούν εργασίες",
+	"name" 				=> "Ονομασία",
+	"house" 			=> "Σπίτι",
 );
 
 ?>

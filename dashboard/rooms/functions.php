@@ -1,40 +1,45 @@
 <?php
 
-    /** Get houses in an array
+    /** Get rooms in an array
      * 
      * @return array
      */
-    function getHouses(){
-        return dbSelect("select * from houses order by house");
+    function getRooms(){
+        return dbSelect("
+            select 
+                rooms.*,
+                houses.house
+            from rooms 
+            inner join houses on rooms.house_id = houses.id
+            order by 
+                house_id, 
+                room
+        ");
     }
 
-    /** Get houses counters
+    /** Get rooms counters
      * 
      * @return array $counters
      */
-    function getHousesCounters(){
+    function getRoomsCounters(){
         // init an array to hold data
         $counters = array();
 
-        // count all houses
-        $all_houses             = dbSelectFirst("select count(*) as all_houses from houses");
-        $counters['all_houses'] = $all_houses['all_houses'];
-       
-        // count houses without rooms
-        $no_rooms               = dbSelect("select count(*) as no_rooms from rooms where house_id not in (select id from houses group by id)");
-        $counters['no_rooms']   = $all_houses['all_houses'];
+        // count all rooms
+        $all_rooms             = dbSelectFirst("select count(*) as all_rooms from rooms");
+        $counters['all_rooms'] = $all_rooms['all_rooms'];
 
-        // count houses that have pending chores
+        // count rooms that have pending chores
         $counters['pending_chores'] = 'TOBEDONE';
 
         return $counters;
     }
 
-    /** Add a new house
+    /** Add a new room
      * 
      * @return string $message
      */
-    function addHouse(){
+    function addRoom(){
         global $lang;
 
         // simple success variable
@@ -44,7 +49,7 @@
         $excluded_post_fields = array();
 
         // set the required fields for backend validation
-        $required_fields = array("house");
+        $required_fields = array("room");
 
         // check if required fields are filled
         $required_status_arr = checkRequiredFields($_POST, $required_fields);
@@ -61,7 +66,7 @@
             }
 
             // do the insert
-            $success = dbInsert($record, "houses");
+            $success = dbInsert($record, "rooms");
 
         }elseif($required_status_arr["requiredStatus"] == 0){
             $success = 8;
@@ -98,11 +103,11 @@
 
     }
 
-    /** Edit a house
+    /** Edit a room
      * 
      * @return string $message
      */
-    function editHouse(){
+    function editRoom(){
         global $lang;
 
         // simple success variable
@@ -112,7 +117,7 @@
         $excluded_post_fields = array("id");
 
         // set the required fields for backend validation
-        $required_fields = array("house");
+        $required_fields = array("room");
 
         // check if required fields are filled
         $required_status_arr = checkRequiredFields($_POST, $required_fields);
@@ -129,7 +134,7 @@
             }
 
             // do the update
-            $success = dbUpdate($record, "houses", "id = ".mySQLSafe($_POST["id"]));
+            $success = dbUpdate($record, "rooms", "id = ".mySQLSafe($_POST["id"]));
 
         }elseif($required_status_arr["requiredStatus"] == 0){
             $success = 8;

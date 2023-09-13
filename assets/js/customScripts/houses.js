@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-    // quick category activity change
+    // quick house activity change
     $(".quick-house-activity").change(function() {
         var house_id  = $(this).data("house-id");
         var newStatus = ($(this).is(':checked'))? 1 : 0;
@@ -15,7 +15,7 @@ $(document).ready(function(){
         });
     });
 
-    // delete category
+    // delete house
     $(".delete-house").click(function() {
         if(confirm('Είσαστε σίγουροι ότι θέλετε να προχωρήσετε σε διαγραφή;')) {
             var house_id = $(this).data('house-id');
