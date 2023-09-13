@@ -3,10 +3,14 @@
     include("../../includes/basic_dashboard_includes.php");
 
     // local functions
+    require_once('../houses/functions.php');
     require_once('functions.php');
 
+    // get houses
+    $houses_arr = getHouses();
+
     // handle post
-    $message = ($_POST)? addHouse() : "";
+    $message = ($_POST)? addRoom() : "";
 ?>
 
 <!DOCTYPE html>
@@ -51,7 +55,7 @@
                     <form class="mb-9" method="post" action="">
 
                         <!-- category form in layouts -->
-                        <?php require_once('../layouts/forms/houses/add_edit_house.php'); ?>
+                        <?php require_once('../layouts/forms/rooms/add_edit_room.php'); ?>
 
                         <div class="row border-top border-grey pt-4">
                             <!-- back -->

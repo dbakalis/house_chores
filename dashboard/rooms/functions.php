@@ -39,7 +39,7 @@
      * 
      * @return string $message
      */
-    function addHouse(){
+    function addRoom(){
         global $lang;
 
         // simple success variable
@@ -49,7 +49,7 @@
         $excluded_post_fields = array();
 
         // set the required fields for backend validation
-        $required_fields = array("house");
+        $required_fields = array("room");
 
         // check if required fields are filled
         $required_status_arr = checkRequiredFields($_POST, $required_fields);
@@ -66,7 +66,7 @@
             }
 
             // do the insert
-            $success = dbInsert($record, "houses");
+            $success = dbInsert($record, "rooms");
 
         }elseif($required_status_arr["requiredStatus"] == 0){
             $success = 8;
@@ -107,7 +107,7 @@
      * 
      * @return string $message
      */
-    function editHouse(){
+    function editRoom(){
         global $glob, $lang, $config;
 
         // simple success variable
