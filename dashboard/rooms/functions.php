@@ -103,12 +103,12 @@
 
     }
 
-    /** Edit a house
+    /** Edit a room
      * 
      * @return string $message
      */
     function editRoom(){
-        global $glob, $lang, $config;
+        global $lang;
 
         // simple success variable
         $success = 0;
@@ -117,7 +117,7 @@
         $excluded_post_fields = array("id");
 
         // set the required fields for backend validation
-        $required_fields = array("house");
+        $required_fields = array("room");
 
         // check if required fields are filled
         $required_status_arr = checkRequiredFields($_POST, $required_fields);
@@ -134,7 +134,7 @@
             }
 
             // do the update
-            $success = dbUpdate($record, "houses", "id = ".mySQLSafe($_POST["id"]));
+            $success = dbUpdate($record, "rooms", "id = ".mySQLSafe($_POST["id"]));
 
         }elseif($required_status_arr["requiredStatus"] == 0){
             $success = 8;

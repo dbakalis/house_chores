@@ -93,5 +93,26 @@
       }else{
           return array();
       }
-     }
+    }
+    
+    /** Get room info
+     * 
+     * @param int $room_id
+	 * @return array
+     */
+    function getRoomInfoById($room_id){
+        global $glob;
+
+        if( (isset($room_id)) && ($room_id != "") ){
+           $room_info = dbSelect("select * from rooms where id = ".mySQLSafe($room_id));
+
+          if(!empty($room_info)){
+              return $room_info[0];
+          }else{
+              return array();
+          }
+      }else{
+          return array();
+      }
+    }
 ?>

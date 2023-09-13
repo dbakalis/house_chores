@@ -103,7 +103,7 @@
      * @return string $message
      */
     function editHouse(){
-        global $glob, $lang, $config;
+        global $lang;
 
         // simple success variable
         $success = 0;

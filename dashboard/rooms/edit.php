@@ -3,13 +3,17 @@
     include("../../includes/basic_dashboard_includes.php");
 
     // local functions
+    require_once('../houses/functions.php');
     require_once('functions.php');
 
-    // get house info
-    $house_info = getHouseInfoById($_GET['id']);
+    // get houses
+    $houses_arr = getHouses();
+
+    // get room info
+    $room_info = getRoomInfoById($_GET['id']);
 
     // handle post
-    $message = ($_POST)? editHouse() : "";
+    $message = ($_POST)? editRoom() : "";
 ?>
 
 <!DOCTYPE html>
@@ -55,7 +59,7 @@
                         <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
 
                         <!-- category form in layouts -->
-                        <?php require_once('../layouts/forms/houses/add_edit_house.php'); ?>
+                        <?php require_once('../layouts/forms/rooms/add_edit_room.php'); ?>
 
                         <div class="row border-top border-grey pt-4">
                             <!-- back -->
