@@ -7,28 +7,24 @@
      * they exist in an array along with the 
      * status of required failure or success (0/1).
      */
-    function checkRequiredFields($reqFieldsArr, $post){
+	function checkRequiredFields($request, $requiredFields){
         global $lang;
 
-        $reqReturnArr   = array();
-        $requiredStatus = 1;
+		$requiredStatusArr 	= array();
+		$missingFields 		= "";
 
-        if(!empty($reqFieldsArr)){
-            $emptyFields = "";
+		// loop post and check required fields
+		foreach($request as $req_key => $req_val){
+			if( (in_array($req_key, $requiredFields)) && ($req_val == "") ){
+				$missingFields .= $lang["requireFields"][$req_key];
+			}
+		}
 
-            foreach($reqFieldsArr as $reqField){
-                if(strlen($_POST[$reqField])<=0){
-                    echo $_POST[$reqField];
-                    $requiredStatus  = 0;
-                    $emptyFields    .= $lang["forms_requiredFields"][$reqField].",";
-                }
-            }
-        }
+		// 1 is ok // 0 is not ok
+		$requiredStatusArr["requiredStatus"] 	= ($missingFields == "")? 1 : 0;
+		$requiredStatusArr["missingFields"]		= $missingFields;
 
-        $reqReturnArr["requiredStatus"] = $requiredStatus;
-        $reqReturnArr["emptyFields"]    = $lang['general']['you_not_typed'].": ".rtrim($emptyFields,",");
-
-        return $reqReturnArr;
+		return $requiredStatusArr;
     }
 
     /** Create an error message and return it in a variable */
