@@ -1,11 +1,20 @@
 <?php
 
+$lang["errors"] = array(
+	"no_records_found" 		=> "Δεν βρέθηκαν εγγραφές",
+	"attention" 			=> "Προσοχή!",
+	"sqlError" 				=> "Παρουσιάστηκε κάποιο πρόβλημα. Παρακαλούμε προσπαθήστε ξανά.",
+	"unknownError" 			=> "Παρουσιάστηκε κάποιο πρόβλημα. Παρακαλούμε προσπαθήστε ξανά.",
+	"requiredFieldsError" 	=> "Δεν έχετε εισάγει δεδομένα στα παρακάτω πεδία",
+);
+
 $lang["forms_requiredFields"] = array(
 	"username" => "Όνομα",
 	"password" => "Κωδικός",
 );
 
 $lang["general"] = array(
+	"id" 				=> "ID",
 	"yes" 				=> "Ναί",
 	"no" 				=> "Όχι",
 	'submit'			=> "Kαταχώρηση",
@@ -44,11 +53,21 @@ $lang["topbar"] = array(
 
 $lang["sidebar"] = array(
 	"dashboard"  => "ΑΡΧΙΚΗ",
+	'houses' 	 => "ΣΠΙΤΙΑ",
 	'rooms' 	 => "ΔΩΜΑΤΙΑ",
 );
 
 $lang["dashboard"] = array(
 	"title" => "Αρχική",
+);
+
+$lang["houses"] = array(
+	"title"	 			=> "ΣΠΙΤΙΑ",
+	"all_houses"	 	=> "Συνολικά όλα",
+	"no_rooms" 			=> "Χωρίς δωμάτια",
+	"pending_chores" 	=> "Εκρεμούν εργασίες",
+	"name" 				=> "Ονομασία",
+	"activity" 			=> "Κατάσταση",
 );
 
 ?>
