@@ -1,0 +1,4 @@
+input[name="year"], input[name="year[]"] {
+    width: 17px;
+    height: 17px;
+}
