@@ -9,8 +9,9 @@ $lang["errors"] = array(
 );
 
 $lang["forms_requiredFields"] = array(
-	"username" => "Όνομα",
-	"password" => "Κωδικός",
+	"username" 	=> "Όνομα",
+	"password" 	=> "Κωδικός",
+	"house" 	=> "Ονομασία σπιτιού",
 );
 
 $lang["general"] = array(

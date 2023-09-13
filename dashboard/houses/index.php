@@ -127,7 +127,7 @@
                                     }else{
                                 ?>
                                         <tr>
-                                            <td colspan='2' class="text-center"><?php echo $lang['errors']['no_records_found']; ?></td>
+                                            <td colspan='3' class="text-center"><?php echo $lang['errors']['no_records_found']; ?></td>
                                         </tr>
                                 <?php
                                     }

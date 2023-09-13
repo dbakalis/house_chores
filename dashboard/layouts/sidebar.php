@@ -32,7 +32,7 @@
 
 						<!-- add houses -->
 						<li class="nav-item">
-							<a class="nav-link fs-0 fw-normal my-2" href="<?php echo $glob["root_admin"]; ?>/rooms/add.php"  data-bs-toggle="" aria-expanded="false">
+							<a class="nav-link fs-0 fw-normal my-2" href="<?php echo $glob["root_admin"]; ?>/houses/add.php"  data-bs-toggle="" aria-expanded="false">
 								<div class="d-flex align-items-center"><span class="nav-link-text"><?php echo $lang["general"]["add"]; ?></span></div>
 							</a>
 						</li>
