@@ -7,7 +7,9 @@
 				"dbdatabase"    => 'house',
 				"dbusername"    => 'root',
 				"dbpassword"    => '',
-				"dbport"        => 3310
+				"dbport"        => 3310,
+				'root'  		=> '/house',
+				'root_admin'  	=> '/house/dashboard'
 			);
 		break;
 
@@ -16,7 +18,9 @@
                 "dbhost"        => 'localhost',
 				"dbdatabase"    => 'house',
 				"dbusername"    => '',
-				"dbpassword"    => ''
+				"dbpassword"    => '',
+				'root'  		=> '/house',
+				'root_admin'  	=> '/house/dashboard'
 			);
 		break;
 	}

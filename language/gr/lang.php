@@ -14,6 +14,8 @@ $lang["general"] = array(
 	'fail_submit'		=> "Μη επιτυχής καταχώρηση",
 	'fail_update'		=> "Μη επιτυχής ενημέρωση",
 	'actions'			=> "Ενέργειες",
+	'view'				=> "Προβολή",
+	'add'				=> "Προσθήκη",
 	'edit'				=> "Επεξεργασία",
 	'delete'			=> "Διαγραφή",
 	'back'				=> "Επιστροφή",
@@ -32,6 +34,21 @@ $lang["login"] = array(
 	"loginBtn" 				=> "Είσοδος",
 	"account_not_active" 	=> "Ο λογαριασμός έχει απενεργοποιηθεί!",
 	"account_not_exist" 	=> "Ο λογαριασμός δεν υπάρχει!",
+);
+
+$lang["topbar"] = array(
+	"title"			=> "ΤΟ ΣΠΙΤΙ ΜΟΥ",
+	"logout" 		=> "Έξοδος",
+	"log_sessions" 	=> "Καταγραφές",
+);
+
+$lang["sidebar"] = array(
+	"dashboard"  => "ΑΡΧΙΚΗ",
+	'rooms' 	 => "ΔΩΜΑΤΙΑ",
+);
+
+$lang["dashboard"] = array(
+	"title" => "Αρχική",
 );
 
 ?>

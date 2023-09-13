@@ -1,14 +1,10 @@
 <?php
-    // basic includes
+    // includes
     include("includes/global.php");
-
-    // include functions
     require_once('database/dbFunctions.php');
+    require_once('language/'.$lang_folder.'/lang.php');
     require_once('includes/global_functions.php');
     require_once('functions.php');
-
-    // include language
-    require_once('language/'.$lang_folder.'/lang.php');
 
     // start or continue session
     session_start();
