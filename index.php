@@ -31,7 +31,6 @@
         <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
         <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicons/favicon.ico">
         <meta name="theme-color" content="#ffffff">
-        <script src="vendors/imagesloaded/imagesloaded.pkgd.min.js"></script>
 
         <!-- bootstrap icons CDN -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
