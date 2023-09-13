@@ -1,3 +1,11 @@
+/* login */
+.bg-login{background-image:url("../img/login_bg.webp"); background-size: cover; background-position: center center;}
+.login-form-container{background-color:rgba(255, 255, 255, 1); border-radius: .375rem;border: 1px solid #cbd0dd; }
+.w-max-380px{max-width: 380px;}
+
+
+
+
 /* tables media events */
 @media screen and (max-width: 550px){
     .page-link{padding: 5px 4px;}
@@ -32,9 +40,6 @@
     .border-right-white{border-right:1px solid #ffffff !important;}
 }
 
-/* widths */
-.w-max-380px{max-width: 380px;}
-
 /* heights */
 .height-300px{height: 300px !important;}
 .max-height-400px{max-height: 400px !important;}
@@ -51,18 +56,3 @@
 .fw-400{font-weight: 400;}
 .fw-500{font-weight: 500;}
 .fw-600{font-weight: 600;}
-
-/* login */
-.bg-login{background-image:url("../img/login_bg.jpg"); background-size: cover; background-position: center center;}
-.logo_icon{margin-top:-30px; margin-left:127px; position:absolute; z-index:55}
-.login-form-container{background-color:rgba(255, 255, 255, 0.5); border-radius: .375rem;border: 1px solid #cbd0dd; padding:130px 35px 40px 35px;-webkit-animation: glowing 1.2s ease-in-out infinite alternate;-moz-animation: glowing 1.2s ease-in-out infinite alternate;animation: glowing 1.2s ease-in-out infinite alternate;}
-
-@-webkit-keyframes glowing {
-	from {
-		box-shadow: 0 0 10px #E9E9E9;
-	}
-	to {
-		box-shadow: 0 0 10px #fff, 0 0 35px #CDCDCD;
-	}
-}
-.bootstrap_icon_size_dash {font-size:35px;}

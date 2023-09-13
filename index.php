@@ -2,11 +2,22 @@
     // basic includes
     include("includes/global.php");
 
-    // include databse functions
+    // include functions
     require_once('database/dbFunctions.php');
+    require_once('includes/global_functions.php');
+    require_once('functions.php');
 
     // include language
-    require_once('language/'.$lang_folder.'/lang.php')
+    require_once('language/'.$lang_folder.'/lang.php');
+
+    // start or continue session
+    session_start();
+
+    // open database connection
+    $dbConnection = openConnectionToDatabase();
+
+    // handle post
+    $message = ($_POST)? login() : "";
 ?>
 
 <!DOCTYPE html>
@@ -38,47 +49,45 @@
     </head>
 	<body>
         <main class="main bg-soft-yellow" id="top">
-            <div class="container-fluid px-0 bg-login" data-layout="container" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="0" data-aos-duration="300" class="aos-init aos-animate">
+            <div class="container-fluid bg-login" data-layout="container" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="0" data-aos-duration="300" class="aos-init aos-animate">
                 <div class="container" >
                     <div class="row flex-center min-vh-100">
-                        <div class="col-12 w-max-380px ">
-							
-							<!-- logo -->
-							<div class="text-center mb-7 logo_icon" data-aos="fade-down"  data-aos-delay="200" data-aos-duration="500" class="aos-init aos-animate">
-                                <img src="assets/img/icons/cart_icon.png" alt="logo_icon" class="mb-2">
-                            </div>
+                        <div class="col-12 w-max-380px">
 
-							<div class="login-form-container" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="200" data-aos-duration="500" class="aos-init aos-animate">
-								<!-- subtitle -->
-								<div class="text-center mb-7" data-aos="fade-up" data-aos-delay="300" data-aos-duration="600" class="aos-init aos-animate">
-									<p class="fs-2 fw-600"><?php echo $lang["login"]["subtitle"]; ?></p>
-								</div>
+							<div class="login-form-container card py-4 px-3" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="200" data-aos-duration="500" class="aos-init aos-animate">
+                                <div class="card-body">
+                                    <!-- subtitle -->
+                                    <div class="text-center mb-4" data-aos="fade-up" data-aos-delay="300" data-aos-duration="600" class="aos-init aos-animate">
+                                        <p class="fs-2 fw-600"><?php echo $lang["login"]["subtitle"]; ?></p>
+                                    </div>
 
-								<form method="post" action="">
-									<!-- username -->
-									<div class="form-floating mb-5 inputbox" class="text-center mb-7" data-aos="fade-up" data-aos-delay="400" data-aos-duration="700" class="aos-init aos-animate">
-										<input type="text" class="form-control bg-transparent border-0 border-botttom-grey border-effect-orange fs-0 fw-normal rounded-0 px-0 placeholder-dark" id="username" name="username" placeholder="<?php echo $lang["login"]["username"]; ?>:" autocomplete="off" required>
-										<label for="username" class="fs-0"><?php echo $lang["login"]["username"]; ?></label>
-									</div>
+                                    <form method="post" action="">
+                                        <!-- username -->
+                                        <div class="form-floating mb-5 inputbox" class="text-center mb-7" data-aos="fade-up" data-aos-delay="400" data-aos-duration="700" class="aos-init aos-animate">
+                                            <input type="text" class="form-control bg-transparent border-0 border-botttom-grey rounded-0 px-0" id="username" name="username" placeholder="<?php echo $lang["login"]["username"]; ?>:" autocomplete="off" required>
+                                            <label for="username" class="fs-0"><?php echo $lang["login"]["username"]; ?></label>
+                                        </div>
 
-									<!-- password -->
-									<div class="form-floating mb-8" class="text-center mb-7" data-aos="fade-up" data-aos-delay="500" data-aos-duration="600" class="aos-init aos-animate">
-										<input type="password" class="form-control bg-transparent border-0 border-botttom-grey border-effect-orange fs-0 fw-normal rounded-0 px-0 placeholder-dark" id="password" name="password" placeholder="<?php echo $lang["login"]["password"]; ?>:" autocomplete="off" required>
-										<label for="password" class="fs-0"><?php echo $lang["login"]["password"]; ?></label>
-									</div>
-							
-									<!-- submit button -->
-									<div class="text-center" data-aos="fade-up"  data-aos-delay="600" data-aos-duration="600" class="aos-init aos-animate">
-										<button type="submit" class="btn btn-secondary mb-3 w-100 bg-effect-orange py-2">
-											<span class="h4 text-white"><?php echo $lang["login"]["loginBtn"]; ?></span>
-										</button>
-									</div>
-								</form>
+                                        <!-- password -->
+                                        <div class="form-floating mb-8" class="text-center mb-7" data-aos="fade-up" data-aos-delay="500" data-aos-duration="600" class="aos-init aos-animate">
+                                            <input type="password" class="form-control bg-transparent border-0 border-botttom-grey rounded-0 px-0" id="password" name="password" placeholder="<?php echo $lang["login"]["password"]; ?>:" autocomplete="off" required>
+                                            <label for="password" class="fs-0"><?php echo $lang["login"]["password"]; ?></label>
+                                        </div>
+                                
+                                        <!-- submit button -->
+                                        <div class="text-center" data-aos="fade-up"  data-aos-delay="600" data-aos-duration="600" class="aos-init aos-animate">
+                                            <button type="submit" class="btn btn-secondary mb-3 w-100 bg-effect-orange py-2">
+                                                <span class="h4 text-white"><?php echo $lang["login"]["loginBtn"]; ?></span>
+                                            </button>
+                                        </div>
 
-								<!-- add new password -->
-								<div class="text-center" class="text-center mb-7" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="700" data-aos-duration="500" class="aos-init aos-animate">
-									<a class="fs-0 text-dark fw-bold text-decoration-none color-effect-orange" href="#"><?php echo $lang["login"]["createNewPass"]; ?></a>
-								</div>
+                                        <?php
+                                            if($message != ""){
+                                                echo $message;
+                                            }
+                                        ?>
+                                    </form>
+                                </div>
 							</div>
                         </div>
                     </div>
@@ -103,3 +112,7 @@
 		</script>
 	</body>
 </html>
+
+<?php
+    closeConnectionToDatabase($dbConnection);
+?>

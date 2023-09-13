@@ -5,7 +5,7 @@
 			$glob = array(
                 "dbhost"        => 'localhost',
 				"dbdatabase"    => 'house',
-				"dbusername"    => '',
+				"dbusername"    => 'root',
 				"dbpassword"    => '',
 				"dbport"        => 3310
 			);
