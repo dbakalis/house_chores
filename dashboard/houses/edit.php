@@ -5,8 +5,11 @@
     // local functions
     require_once('functions.php');
 
+    // get house info
+    $house_info = getHouseInfoById($_GET['id']);
+
     // handle post
-    $message = ($_POST)? addHouse() : "";
+    $message = ($_POST)? editHouse() : "";
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +18,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title><?php echo $lang['general']['add']; ?></title>
+		<title><?php echo $lang['general']['edit']; ?></title>
 
 		<!-- favicos -->
 		<link rel="apple-touch-icon" sizes="180x180" href="../../assets/img/favicons/apple-touch-icon.png">
@@ -44,11 +47,12 @@
                     <!-- title -->
                     <div class="row g-3 mb-2">
                         <div class="col-auto">
-                            <span class="text-dark-blue fs-3 fw-100"><?php echo $lang["general"]["add"]; ?></span>
+                            <span class="text-dark-blue fs-3 fw-100"><?php echo $lang["general"]["edit"]; ?></span>
                         </div>
                     </div>
 
                     <form class="mb-9" method="post" action="">
+                        <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
 
                         <!-- category form in layouts -->
                         <?php require_once('../layouts/forms/houses/add_edit_house.php'); ?>

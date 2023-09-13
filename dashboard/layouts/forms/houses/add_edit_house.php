@@ -18,7 +18,7 @@
 			<?php echo $lang["houses"]["activity"]; ?>
 		</div>
 
-		<?php $active = ( (isset($house['active'])) && ($house['active'] == 1) )? 'selected' : '';?>
+		<?php $active = ( (isset($house_info['active'])) && ($house_info['active'] == 1) )? 'selected' : '';?>
 
 		<select class="form-select" name="active">
             <option value="0"><?php echo $lang["general"]["no"]; ?></option>

@@ -64,12 +64,34 @@
     function checkSessionIsAlive(){
         global $glob;
 
-        if( (isset($_SESSION['sessionUserId'])) && ($_SESSION["sessionUserId"] != "") && ($_SESSION["sessionUserId"] > 0) ){
+        if( (isset($_SESSION['user_id'])) && ($_SESSION["user_id"] != "") && ($_SESSION["user_id"] > 0) ){
             // everything is fine
         }else{
-            header('Location: '.$glob['rootRelAdmin']."/logout.php");
+            header('Location: '.$glob['root_admin']."/logout.php");
             die();
         }
     }
 
+    /////////////////////////////// DATA GETTERS ////////////////////////////////
+
+    /** Get house info
+     * 
+     * @param int $house_id
+	 * @return array
+     */
+    function getHouseInfoById($house_id){
+        global $glob;
+
+        if( (isset($house_id)) && ($house_id != "") ){
+           $house_info = dbSelect("select * from houses where id = ".mySQLSafe($house_id));
+
+          if(!empty($house_info)){
+              return $house_info[0];
+          }else{
+              return array();
+          }
+      }else{
+          return array();
+      }
+     }
 ?>
