@@ -40,25 +40,36 @@
 			<?php echo $lang["chores"]["days"]; ?>
 		</div>
             
-        <div class="row g-2">
-            <?php
-                if( (isset($lang['days_of_week'])) && (!empty($lang['days_of_week'])) ){
-                    foreach ($lang['days_of_week'] as $day_key => $day_name) {
-            ?>
-                        <div class="col-12">
-                            <input type="checkbox" id="chk-day-<?php echo $day_key; ?>" class="form-check-input" name="days[<?php echo $day_key; ?>]">
-                            <label for="chk-day-<?php echo $day_key; ?>"><?php echo $day_name; ?></label>
-                        </div>
-            <?php
-                    }
-                }
-            ?>
-        </div>
+		<?php
+			if( (isset($lang['days_of_week'])) && (!empty($lang['days_of_week'])) ){
+				foreach ($lang['days_of_week'] as $day_key => $day_name) {
+		?>
+				<div class="row g-3 my-1">
+					<div class="col-12 col-md-4">
+						<input type="checkbox" id="chk-day-<?php echo $day_key; ?>" class="form-check-input" name="days[<?php echo $day_key; ?>]">
+						<label for="chk-day-<?php echo $day_key; ?>"><?php echo $day_name; ?></label>
+					</div>
+
+					<div class="col-12 col-md-8">
+						<select class="form-select" name="user[<?php echo $day_key; ?>]">
+							<option value=""><?php echo $lang["general"]["choose"]; ?></option>
+							<?php
+								if(!empty($users_arr)){
+									foreach ($users_arr as $user) {
+							?>
+										<option value="<?php echo $user['id']; ?>"><?php echo $user['username']; ?></option>								
+							<?php
+									}
+								}
+							?>
+						</select>
+					</div>
+				</div>
+		<?php
+				}
+			}
+		?>
 	</div>
-
-
-    
-
 	
 
 </div>

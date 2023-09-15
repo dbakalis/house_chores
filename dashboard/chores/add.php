@@ -4,10 +4,14 @@
 
     // local functions
     require_once('../houses/functions.php');
+    require_once('../users/functions.php');
     require_once('functions.php');
 
     // get houses
     $houses_arr = getHouses();
+
+    // get users
+    $users_arr = getUsers();
 
     // handle psot
     $message = ($_POST)? addChore() : '';
