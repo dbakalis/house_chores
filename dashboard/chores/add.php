@@ -9,8 +9,8 @@
     // get houses
     $houses_arr = getHouses();
 
-    // handle post
-    $message = ($_POST)? addRoom() : "";
+    // handle psot
+    $message = ($_POST)? addChore() : '';
 ?>
 
 <!DOCTYPE html>
@@ -55,7 +55,7 @@
                     <form class="mb-9" method="post" action="">
 
                         <!-- category form in layouts -->
-                        <?php require_once('../layouts/forms/rooms/add_edit_room.php'); ?>
+                        <?php require_once('../layouts/forms/chores/add_edit_chore.php'); ?>
 
                         <div class="row border-top border-grey pt-4">
                             <!-- back -->
@@ -84,6 +84,8 @@
         <script src="../../vendors/lodash/lodash.min.js"></script>
         <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
         <script src="../../assets/js/phoenix.js"></script>
+        <script src="../../assets/js/jquery3_6_0.min.js"></script>
+        <script src="../../assets/js/customScripts/chores.js"></script>
 	</body>
 </html>
 

@@ -1,19 +1,14 @@
 <?php
 
-    /** Get rooms in an array
+    /** Get chores in an array
      * 
      * @return array
      */
-    function getRooms(){
+    function getChores(){
         return dbSelect("
             select 
-                rooms.*,
-                houses.house
-            from rooms 
-            inner join houses on rooms.house_id = houses.id
-            order by 
-                house_id, 
-                room
+                chores.* 
+            from chores
         ");
     }
 
@@ -35,12 +30,14 @@
         return $counters;
     }
 
-    /** Add a new room
+    /** Add a new chore
      * 
      * @return string $message
      */
-    function addRoom(){
+    function addChore(){
         global $lang;
+        echo "<pre>"; print_r($_POST); echo "</pre>";
+        exit;
 
         // simple success variable
         $success = 0;
@@ -49,7 +46,7 @@
         $excluded_post_fields = array();
 
         // set the required fields for backend validation
-        $required_fields = array("room");
+        $required_fields = array("chore", "room_id");
 
         // check if required fields are filled
         $required_status_arr = checkRequiredFields($_POST, $required_fields);

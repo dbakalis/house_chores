@@ -11,20 +11,35 @@
 	if(isset($_POST['values'])) {
 		if(!empty($_POST['values'])) {
 			switch($_POST['values']) {
-				case 'deleteRoom' : deleteRoom(); break;
+				case 'deleteChore' 				: deleteChore(); break;
+				case 'populateRoomsByHouseId' 	: populateRoomsByHouseId(); break;
 			}
 		}
 	}
 
 	///////////////////////////////////AVAILABILITIES///////////////////////////////////////
 
-    /** Delete a room
+    /** Delete a chore
 	 * 
 	 * @return void
 	 */
-    function deleteRoom(){
-		dbDelete("rooms", "id = ".mySQLSafe($_POST["room_id"]));
+    function deleteChore(){
+		dbDelete("chores", "id = ".mySQLSafe($_POST["chore_id"]));
     }
+
+	/** Fill with option tags the room_id select tag
+	 * 
+	 * @return string
+	 */
+	function populateRoomsByHouseId(){
+		$rooms_arr = dbSelect("select id, room from rooms where house_id = ".mySQLSafe($_POST['house_id']));
+
+		if(!empty($rooms_arr)){
+			foreach ($rooms_arr as $room) {
+				echo "<option value='".$room['id']."'>".$room['room']."</option>";
+			}
+		}
+	}
 
     closeConnectionToDatabase($dbConnection);
 ?>

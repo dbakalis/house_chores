@@ -17,10 +17,3 @@ $(document).ready(function(){
     });
 
 });
-
-function replaceUrlBrowser(urlToGo){
-    // relace the hash in the browser
-    var new_url = urlToGo;
-    window.history.replaceState("data","Title",new_url);
-    document.title=new_url;
-}

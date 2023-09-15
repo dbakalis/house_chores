@@ -8,8 +8,8 @@
 				"dbusername"    => 'root',
 				"dbpassword"    => '',
 				"dbport"        => 3310,
-				'root'  		=> '/house',
-				'root_admin'  	=> '/house/dashboard'
+				'root'  		=> '/houses',
+				'root_admin'  	=> '/houses/dashboard'
 			);
 		break;
 
