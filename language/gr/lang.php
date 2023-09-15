@@ -1,5 +1,15 @@
 <?php
 
+$lang['days_of_week'] = array(
+	1 => "Δευτέρα",
+	2 => "Τρίτη",
+	3 => "Τετάρτη",
+	4 => "Πέμπτη",
+	5 => "Παρασκευή",
+	6 => "Σάββατο",
+	7 => "Κυριακή",
+);
+
 $lang["errors"] = array(
 	"no_records_found" 		=> "Δεν βρέθηκαν εγγραφές",
 	"attention" 			=> "Προσοχή!",
@@ -12,7 +22,7 @@ $lang["forms_requiredFields"] = array(
 	"username" 	=> "Όνομα",
 	"password" 	=> "Κωδικός",
 	"house" 	=> "Ονομασία σπιτιού",
-	"room" 		=> "Ονομασία δωματίου",
+	"chore" 	=> "Ονομασία εργασίας",
 );
 
 $lang["general"] = array(
@@ -57,6 +67,7 @@ $lang["sidebar"] = array(
 	"dashboard"  => "ΑΡΧΙΚΗ",
 	'houses' 	 => "ΣΠΙΤΙΑ",
 	'rooms' 	 => "ΔΩΜΑΤΙΑ",
+	'chores' 	 => "ΕΡΓΑΣΙΕΣ",
 );
 
 $lang["dashboard"] = array(
@@ -72,12 +83,11 @@ $lang["houses"] = array(
 	"activity" 			=> "Κατάσταση",
 );
 
-$lang["rooms"] = array(
-	"title"	 			=> "ΔΩΜΑΤΙΑ",
-	"all_rooms"	 		=> "Συνολικά δωμάτια",
-	"pending_chores" 	=> "Εκρεμούν εργασίες",
-	"name" 				=> "Ονομασία",
-	"house" 			=> "Σπίτι",
+$lang["chores"] = array(
+	"title" => "ΕΡΓΑΣΙΕΣ",
+	"chore" => "Ονομασία",
+	"house" => "Σπίτι",
+	"days" 	=> "Ημέρες",
 );
 
 ?>

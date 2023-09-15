@@ -6,7 +6,7 @@
 		<div class="navbar-vertical-content scrollbar">
 			<ul class="navbar-nav flex-column" id="navbarVerticalNav">
 				
-				<!-- rooms dropdown -->
+				<!-- houses dropdown -->
 				<li class="nav-item">
 					<a class="nav-link dropdown-indicator fs-0 fw-normal py-2" href="#houses-sidebar" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="houses-sidebar">
 						<div class="d-flex align-items-center">
@@ -41,33 +41,33 @@
 					</ul>
 				</li>
 				
-				<!-- rooms dropdown -->
+				<!-- chores dropdown -->
 				<li class="nav-item">
-					<a class="nav-link dropdown-indicator fs-0 fw-normal py-2" href="#rooms-sidebar" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="rooms-sidebar">
+					<a class="nav-link dropdown-indicator fs-0 fw-normal py-2" href="#chores-sidebar" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="chores-sidebar">
 						<div class="d-flex align-items-center">
 							<!-- arrow down area -->
 							<div class="dropdown-indicator-icon d-flex flex-center"></div>
 
-							<!-- categories icon -->
+							<!-- chores icon -->
 							<span class="nav-link-icon">
-								<span class="bi bi-slash-square"></span>
+								<span class="bi bi-person-workspace"></span>
 							</span>
 
 							<!-- text -->
-							<span class="nav-link-text"><?php echo $lang["sidebar"]["rooms"]; ?></span>
+							<span class="nav-link-text"><?php echo $lang["sidebar"]["chores"]; ?></span>
 						</div>
 					</a>
-					<ul class="nav collapse parent" id="rooms-sidebar">
-						<!-- manage rooms -->
+					<ul class="nav collapse parent" id="chores-sidebar">
+						<!-- manage chores -->
 						<li class="nav-item">
-							<a class="nav-link fs-0 fw-normal my-2" href="<?php echo $glob["root_admin"]; ?>/rooms/"  data-bs-toggle="" aria-expanded="false">
+							<a class="nav-link fs-0 fw-normal my-2" href="<?php echo $glob["root_admin"]; ?>/chores/"  data-bs-toggle="" aria-expanded="false">
 								<div class="d-flex align-items-center"><span class="nav-link-text"><?php echo $lang["general"]["view"]; ?></span></div>
 							</a>
 						</li>
 
-						<!-- add rooms -->
+						<!-- add chores -->
 						<li class="nav-item">
-							<a class="nav-link fs-0 fw-normal my-2" href="<?php echo $glob["root_admin"]; ?>/rooms/add.php"  data-bs-toggle="" aria-expanded="false">
+							<a class="nav-link fs-0 fw-normal my-2" href="<?php echo $glob["root_admin"]; ?>/chores/add.php"  data-bs-toggle="" aria-expanded="false">
 								<div class="d-flex align-items-center"><span class="nav-link-text"><?php echo $lang["general"]["add"]; ?></span></div>
 							</a>
 						</li>
