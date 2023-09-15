@@ -66,7 +66,6 @@ $lang["topbar"] = array(
 $lang["sidebar"] = array(
 	"dashboard"  => "ΑΡΧΙΚΗ",
 	'houses' 	 => "ΣΠΙΤΙΑ",
-	'rooms' 	 => "ΔΩΜΑΤΙΑ",
 	'chores' 	 => "ΕΡΓΑΣΙΕΣ",
 );
 
@@ -77,7 +76,6 @@ $lang["dashboard"] = array(
 $lang["houses"] = array(
 	"title"	 			=> "ΣΠΙΤΙΑ",
 	"all_houses"	 	=> "Συνολικά όλα",
-	"no_rooms" 			=> "Χωρίς σπίτια",
 	"pending_chores" 	=> "Εκρεμούν εργασίες",
 	"name" 				=> "Ονομασία",
 	"activity" 			=> "Κατάσταση",

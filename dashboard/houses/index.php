@@ -58,13 +58,7 @@
                             <span class="fs-5 text-dark-blue fw-500"><?php echo $houses_counters["all_houses"]; ?></span>
                             <span class="text-grey"><?php echo $lang["houses"]["all_houses"]; ?></span>
                         </div>
-                        
-                        <!-- houses with no rooms -->
-                        <div class="col-12 col-sm-auto text-center">
-                            <span class="fs-5 text-dark-blue fw-500"><?php echo $houses_counters["no_rooms"]; ?></span>
-                            <span class="text-grey"><?php echo $lang["houses"]["no_rooms"]; ?></span>
-                        </div>
-                        
+
                         <!-- houses with pending chores -->
                         <div class="col-12 col-sm-auto text-center">
                             <span class="fs-5 text-dark-blue fw-500"><?php echo $houses_counters["pending_chores"]; ?></span>
