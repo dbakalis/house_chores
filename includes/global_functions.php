@@ -80,8 +80,6 @@
 	 * @return array
      */
     function getHouseInfoById($house_id){
-        global $glob;
-
         if( (isset($house_id)) && ($house_id != "") ){
            $house_info = dbSelect("select * from houses where id = ".mySQLSafe($house_id));
 
@@ -95,19 +93,17 @@
       }
     }
     
-    /** Get room info
+    /** Get chore info
      * 
-     * @param int $room_id
+     * @param int $chore_id
 	 * @return array
      */
-    function getRoomInfoById($room_id){
-        global $glob;
+    function getChoreInfoByChoreId($chore_id){
+        if( (isset($chore_id)) && ($chore_id != "") ){
+           $chore_info = dbSelect("select * from chores where id = ".mySQLSafe($chore_id));
 
-        if( (isset($room_id)) && ($room_id != "") ){
-           $room_info = dbSelect("select * from rooms where id = ".mySQLSafe($room_id));
-
-          if(!empty($room_info)){
-              return $room_info[0];
+          if(!empty($chore_info)){
+              return $chore_info[0];
           }else{
               return array();
           }

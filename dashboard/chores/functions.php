@@ -105,6 +105,14 @@
         }
     }
 
+    /** Edit a chore
+     * 
+     * @return string $message
+     */
+    function editChore(){
+
+    }
+
     /** Keep an archive of chore days
      * 
      * @param int $chore_id
