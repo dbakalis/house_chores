@@ -1,19 +1,19 @@
 $(document).ready(function(){
     
-    // delete room
-    // $(".delete-room").click(function() {
-    //     if(confirm('Είσαστε σίγουροι ότι θέλετε να προχωρήσετε σε διαγραφή;')) {
-    //         var room_id = $(this).data('room-id');
+    // delete chore
+    $(".delete-chore").click(function() {
+        if(confirm('Είσαστε σίγουροι ότι θέλετε να προχωρήσετε σε διαγραφή;')) {
+            var chore_id = $(this).data('chore-id');
 
-    //         $.ajax({
-    //             url: "ajax_functions.php",
-    //             data: {values: 'deleteRoom', room_id: room_id},
-    //             type: "POST", 
-    //             success: function(output){	
-    //                 location.reload();
-    //             }
-    //         });
-    //     }
-    // });
+            $.ajax({
+                url: "ajax_functions.php",
+                data: {values: 'deleteChore', chore_id: chore_id},
+                type: "POST", 
+                success: function(output){	
+                    location.reload();
+                }
+            });
+        }
+    });
 
 });
