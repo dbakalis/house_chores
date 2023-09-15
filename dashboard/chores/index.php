@@ -54,6 +54,7 @@
                             <thead>
                                 <tr class="text-center align-middle bg-grey-1">
                                     <th scope="col" class="fw-500"><?php echo $lang["general"]["id"]; ?></th>
+                                    <th scope="col" class="fw-500"><?php echo $lang["chores"]["house"]; ?></th>
                                     <th scope="col" class="fw-500"><?php echo $lang["chores"]["chore"]; ?></th>
                                     <th scope="col" class="fw-500"><?php echo $lang["general"]["edit"]; ?></th>
                                 </tr>
@@ -67,6 +68,11 @@
                                                 <!-- id -->
                                                 <td data-title='<?php echo $lang["general"]["id"]; ?>'>
                                                     <?php echo $chore["id"]; ?>
+                                                </td>
+                                                
+                                                <!-- house -->
+                                                <td data-title='<?php echo $lang["chore"]["house"]; ?>'>
+                                                    <?php echo $chore["house"]; ?>
                                                 </td>
                                                 
                                                 <!-- chore -->
