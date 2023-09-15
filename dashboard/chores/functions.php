@@ -19,6 +19,16 @@
         ");
     }
 
+    /** Get the chore ids on calendar
+     * 
+     * Searches 2 months in the future of current day
+     * 
+     * @return array
+     */
+    function getFutureCalendarChores(){
+        return dbSelect("select chore_id from calendar where the_date between ".mySQLSafe(date("Y-m-d"))." and ".mySQLSafe(date('Y-m-d', strtotime(date("Y-m-d").' + 2 month')))." group by chore_id");
+    }
+
     /** Add a new chore
      * 
      * @return string $message
@@ -67,6 +77,7 @@
 
             // id days are selected create the calendar
             if( (isset($_POST['days'])) && (!empty($_POST['days'])) ){
+                archiveChoreDays($chore_id, $_POST['days']);
                 createdChoreCalendar($chore_id, $_POST['days'], $_POST['user']);
             }
 
@@ -94,10 +105,28 @@
         }
     }
 
+    /** Keep an archive of chore days
+     * 
+     * @param int $chore_id
+     * @param array $days_arr
+     * @return void
+     */
+    function archiveChoreDays($chore_id, $days_arr){
+        foreach ($days_arr as $day_key => $day_on) {
+            $record_chdays               = array();
+            $record_chdays['chore_id']   = mySQLSafe($chore_id);
+            $record_chdays['day_number'] = mySQLSafe($day_key);
+
+            dbInsert($record_chdays, "chores_days");
+            unset($record_chdays);
+        }
+    }
+
     /** Create the calendar of chores
      * 
      * @param int $chore_id
-     * @param int $house_id
+     * @param array $days_arr
+     * @param array $posted_users_arr
      * @return void
      */
     function createdChoreCalendar($chore_id, $days_arr, $posted_users_arr){

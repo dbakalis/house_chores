@@ -7,6 +7,10 @@
 
     // get chores
     $chores_arr = getChores();
+
+    // get chores on calendar
+    $calendar_chores_arr     = getFutureCalendarChores();
+    $calendar_chores_ids_arr = (!empty($calendar_chores_arr))? array_column($calendar_chores_arr, "chore_id") : array();
 ?>
 
 <!DOCTYPE html>
@@ -63,6 +67,7 @@
                                 <?php
                                     if(!empty($chores_arr)){
                                         foreach($chores_arr as $chore){
+                                            $calendar_chore_index = array_search($chore['id'], $calendar_chores_ids_arr);
                                 ?>
                                             <tr class='bg-white text-center align-middle'>
                                                 <!-- id -->
@@ -87,6 +92,16 @@
                                                             <a class="bi bi-pencil-fill text-grey fs-1 cursor-pointer" href="edit.php?id=<?php echo $chore["id"]; ?>" data-bs-toggle="tooltip" data-bs-placement="top" title="<?php echo $lang["general"]["edit"]; ?>"></a>
                                                         </div>
 
+                                                        <?php
+                                                            if($calendar_chore_index !== false){
+                                                        ?>
+                                                                <div class="col-auto">
+                                                                    <a class="bi bi-calendar-week-fill text-grey fs-1 cursor-pointer" href="calendar.php?id=<?php echo $chore["id"]; ?>" data-bs-toggle="tooltip" data-bs-placement="top" title="<?php echo $lang["general"]["edit"]; ?>"></a>
+                                                                </div>
+                                                        <?php  
+                                                            }
+                                                        ?>
+
                                                         <div class="col-auto">
                                                             <a class="bi bi-trash text-grey fs-1 cursor-pointer delete-chore" data-chore-id="<?php echo $chore["id"]; ?>" data-bs-toggle="tooltip" data-bs-placement="top" title="<?php echo $lang["general"]["delete"]; ?>"></a>
                                                         </div>
@@ -98,7 +113,7 @@
                                     }else{
                                 ?>
                                         <tr>
-                                            <td colspan='3' class="text-center"><?php echo $lang['errors']['no_records_found']; ?></td>
+                                            <td colspan='4' class="text-center"><?php echo $lang['errors']['no_records_found']; ?></td>
                                         </tr>
                                 <?php
                                     }
@@ -118,7 +133,7 @@
         <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
         <script src="../../assets/js/phoenix.js"></script>
         <script src="../../assets/js/jquery3_6_0.min.js"></script>
-        <script src="../../assets/js/customScripts/chore.js"></script>
+        <script src="../../assets/js/customScripts/chores.js"></script>
 	</body>
 </html>
 
